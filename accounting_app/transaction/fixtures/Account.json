@@ -22,7 +22,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"current_assets"}},
+        "account":"current assets"}},
 {
     "pk":3,
     "model":"transaction.account",
@@ -34,7 +34,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"kas_dan_setara_kas"}},
+        "account":"kas dan setara kas"}},
 {
     "pk":4,
     "model":"transaction.account",
@@ -82,7 +82,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"piutang_usaha"}},
+        "account":"piutang usaha"}},
 {
     "pk":8,
     "model":"transaction.account",
@@ -94,7 +94,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"piutang_lainnya"}},
+        "account":"piutang lainnya"}},
 {
     "pk":9,
     "model":"transaction.account",
@@ -118,7 +118,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"persediaan_toko"}},
+        "account":"persediaan toko"}},
 {
     "pk":11,
     "model":"transaction.account",
@@ -130,7 +130,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_dibayar_dimuka"}},
+        "account":"biaya dibayar dimuka"}},
 {
     "pk":12,
     "model":"transaction.account",
@@ -142,7 +142,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_dibayar_dimuka_sewa"}},
+        "account":"biaya dibayar dimuka sewa"}},
 {
     "pk":13,
     "model":"transaction.account",
@@ -154,7 +154,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_dibayar_dimuka_asuransi"}},
+        "account":"biaya dibayar dimuka asuransi"}},
 {
     "pk":14,
     "model":"transaction.account",
@@ -178,7 +178,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"investasi_obligasi"}},
+        "account":"investasi obligasi"}},
 {
     "pk":16,
     "model":"transaction.account",
@@ -190,7 +190,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"investasi_saham"}},
+        "account":"investasi saham"}},
 {
     "pk":17,
     "model":"transaction.account",
@@ -202,7 +202,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"non_current_assets"}},
+        "account":"non current assets"}},
 {
     "pk":18,
     "model":"transaction.account",
@@ -214,7 +214,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"aset_berwujud"}},
+        "account":"aset berwujud"}},
 {
     "pk":19,
     "model":"transaction.account",
@@ -274,7 +274,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"revaluasi_tanah"}},
+        "account":"revaluasi tanah"}},
 {
     "pk":24,
     "model":"transaction.account",
@@ -286,7 +286,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"akumulasi_depresiasi_gedung"}},
+        "account":"akumulasi depresiasi gedung"}},
 {
     "pk":25,
     "model":"transaction.account",
@@ -298,7 +298,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"akumulasi_depresiasi_kendataan_"}},
+        "account":"akumulasi depresiasi kendataan "}},
 {
     "pk":26,
     "model":"transaction.account",
@@ -310,7 +310,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"akumulasi_depresiasi_peralatan"}},
+        "account":"akumulasi depresiasi peralatan"}},
 {
     "pk":27,
     "model":"transaction.account",
@@ -322,7 +322,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"aset_tak_berwujud"}},
+        "account":"aset tak berwujud"}},
 {
     "pk":28,
     "model":"transaction.account",
@@ -382,7 +382,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"current_liability"}},
+        "account":"current liability"}},
 {
     "pk":33,
     "model":"transaction.account",
@@ -394,7 +394,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_dagang"}},
+        "account":"utang dagang"}},
 {
     "pk":34,
     "model":"transaction.account",
@@ -406,7 +406,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"biaya_masih_harus_dibayar"}},
+        "account":"biaya masih harus dibayar"}},
 {
     "pk":35,
     "model":"transaction.account",
@@ -418,7 +418,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_pendapatan"}},
+        "account":"utang pendapatan"}},
 {
     "pk":36,
     "model":"transaction.account",
@@ -430,7 +430,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_pajak"}},
+        "account":"utang pajak"}},
 {
     "pk":37,
     "model":"transaction.account",
@@ -442,7 +442,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_jangka_pendek_lain_"}},
+        "account":"utang jangka pendek lain "}},
 {
     "pk":38,
     "model":"transaction.account",
@@ -454,7 +454,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"non_current_liability"}},
+        "account":"non current liability"}},
 {
     "pk":39,
     "model":"transaction.account",
@@ -466,7 +466,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_obligasi"}},
+        "account":"utang obligasi"}},
 {
     "pk":40,
     "model":"transaction.account",
@@ -478,7 +478,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"utang_jangka_panjang_lain_"}},
+        "account":"utang jangka panjang lain "}},
 {
     "pk":41,
     "model":"transaction.account",
@@ -514,7 +514,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"retained_earning"}},
+        "account":"retained earning"}},
 {
     "pk":44,
     "model":"transaction.account",
@@ -550,7 +550,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"penjualan_"}},
+        "account":"penjualan "}},
 {
     "pk":47,
     "model":"transaction.account",
@@ -562,7 +562,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"penjualan_tunai"}},
+        "account":"penjualan tunai"}},
 {
     "pk":48,
     "model":"transaction.account",
@@ -574,7 +574,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"penjualan_kredit"}},
+        "account":"penjualan kredit"}},
 {
     "pk":49,
     "model":"transaction.account",
@@ -586,7 +586,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"retur_penjualan_"}},
+        "account":"retur penjualan "}},
 {
     "pk":50,
     "model":"transaction.account",
@@ -598,7 +598,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"diskon_penjualan_"}},
+        "account":"diskon penjualan "}},
 {
     "pk":51,
     "model":"transaction.account",
@@ -622,7 +622,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"persediaan_awal"}},
+        "account":"persediaan awal"}},
 {
     "pk":53,
     "model":"transaction.account",
@@ -646,7 +646,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"retur_pembelian"}},
+        "account":"retur pembelian"}},
 {
     "pk":55,
     "model":"transaction.account",
@@ -658,7 +658,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"persediaan_akhir"}},
+        "account":"persediaan akhir"}},
 {
     "pk":56,
     "model":"transaction.account",
@@ -670,7 +670,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"harga_pokok_lain_"}},
+        "account":"harga pokok lain "}},
 {
     "pk":57,
     "model":"transaction.account",
@@ -694,7 +694,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"beban_penjualan_"}},
+        "account":"beban penjualan "}},
 {
     "pk":59,
     "model":"transaction.account",
@@ -706,7 +706,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_promosi"}},
+        "account":"biaya promosi"}},
 {
     "pk":60,
     "model":"transaction.account",
@@ -718,7 +718,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_promosi_iklan_"}},
+        "account":"biaya promosi iklan "}},
 {
     "pk":61,
     "model":"transaction.account",
@@ -730,7 +730,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_pengiriman_"}},
+        "account":"biaya pengiriman "}},
 {
     "pk":62,
     "model":"transaction.account",
@@ -742,7 +742,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_komisi"}},
+        "account":"biaya komisi"}},
 {
     "pk":63,
     "model":"transaction.account",
@@ -754,7 +754,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_komisi_penjualan_"}},
+        "account":"biaya komisi penjualan "}},
 {
     "pk":64,
     "model":"transaction.account",
@@ -766,7 +766,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"beban_personalia"}},
+        "account":"beban personalia"}},
 {
     "pk":65,
     "model":"transaction.account",
@@ -778,7 +778,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_gaji"}},
+        "account":"biaya gaji"}},
 {
     "pk":66,
     "model":"transaction.account",
@@ -790,7 +790,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_thr"}},
+        "account":"biaya thr"}},
 {
     "pk":67,
     "model":"transaction.account",
@@ -802,7 +802,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_bonus"}},
+        "account":"biaya bonus"}},
 {
     "pk":68,
     "model":"transaction.account",
@@ -814,7 +814,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_bpjs_tk"}},
+        "account":"biaya bpjs tk"}},
 {
     "pk":69,
     "model":"transaction.account",
@@ -826,7 +826,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_bpjs_ks"}},
+        "account":"biaya bpjs ks"}},
 {
     "pk":70,
     "model":"transaction.account",
@@ -838,7 +838,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_rekruitment"}},
+        "account":"biaya rekruitment"}},
 {
     "pk":71,
     "model":"transaction.account",
@@ -850,7 +850,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"beban_administrasi_dan_umum"}},
+        "account":"beban administrasi dan umum"}},
 {
     "pk":72,
     "model":"transaction.account",
@@ -862,7 +862,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_perjalanan_dinas"}},
+        "account":"biaya perjalanan dinas"}},
 {
     "pk":73,
     "model":"transaction.account",
@@ -874,7 +874,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_bensin_parkir_dan_tol_"}},
+        "account":"biaya bensin parkir dan tol "}},
 {
     "pk":74,
     "model":"transaction.account",
@@ -886,7 +886,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_tiket"}},
+        "account":"biaya tiket"}},
 {
     "pk":75,
     "model":"transaction.account",
@@ -898,7 +898,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_hotel"}},
+        "account":"biaya hotel"}},
 {
     "pk":76,
     "model":"transaction.account",
@@ -910,7 +910,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_pemeliharaan_gedung"}},
+        "account":"biaya pemeliharaan gedung"}},
 {
     "pk":77,
     "model":"transaction.account",
@@ -922,7 +922,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_perlengkapan_kantor"}},
+        "account":"biaya perlengkapan kantor"}},
 {
     "pk":78,
     "model":"transaction.account",
@@ -934,7 +934,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_depresiasi"}},
+        "account":"biaya depresiasi"}},
 {
     "pk":79,
     "model":"transaction.account",
@@ -946,7 +946,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_amortisasi"}},
+        "account":"biaya amortisasi"}},
 {
     "pk":80,
     "model":"transaction.account",
@@ -958,7 +958,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"other_incomes"}},
+        "account":"other incomes"}},
 {
     "pk":81,
     "model":"transaction.account",
@@ -970,7 +970,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"pendapatan_diluar_operasional"}},
+        "account":"pendapatan diluar operasional"}},
 {
     "pk":82,
     "model":"transaction.account",
@@ -982,7 +982,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"pendapatan_selisih_kurs"}},
+        "account":"pendapatan selisih kurs"}},
 {
     "pk":83,
     "model":"transaction.account",
@@ -994,7 +994,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"pendapatan_lain_lain_"}},
+        "account":"pendapatan lain lain "}},
 {
     "pk":84,
     "model":"transaction.account",
@@ -1006,7 +1006,7 @@
         "c5":0,
         "c6":0,
         "dp":"cr",
-        "account":"keuntungan_penjualan_aset_tetap"}},
+        "account":"keuntungan penjualan aset tetap"}},
 {
     "pk":85,
     "model":"transaction.account",
@@ -1018,7 +1018,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"other_expenses"}},
+        "account":"other expenses"}},
 {
     "pk":86,
     "model":"transaction.account",
@@ -1030,7 +1030,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_diluar_usaha"}},
+        "account":"biaya diluar usaha"}},
 {
     "pk":87,
     "model":"transaction.account",
@@ -1042,7 +1042,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_rugi_selisih_kurs"}},
+        "account":"biaya rugi selisih kurs"}},
 {
     "pk":88,
     "model":"transaction.account",
@@ -1054,7 +1054,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"biaya_lain_lain_"}},
+        "account":"biaya lain lain "}},
 {
     "pk":89,
     "model":"transaction.account",
@@ -1066,7 +1066,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"kerugian_penjualan_aset_tetap"}},
+        "account":"kerugian penjualan aset tetap"}},
 {
     "pk":90,
     "model":"transaction.account",
@@ -1078,7 +1078,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"corporate_tax"}},
+        "account":"corporate tax"}},
 {
     "pk":91,
     "model":"transaction.account",
@@ -1090,7 +1090,7 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"pajak_penghasilan_badan"}},
+        "account":"pajak penghasilan badan"}},
 {
     "pk":92,
     "model":"transaction.account",
@@ -1102,5 +1102,5 @@
         "c5":0,
         "c6":0,
         "dp":"dr",
-        "account":"pajak_penghasilan_badan_pph_pasal_29"}}
+        "account":"pajak penghasilan badan pph pasal 29"}}
     ]

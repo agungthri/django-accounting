@@ -1,0 +1,41 @@
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+
+<hr>
+<a href=""><button>Kembali</button></a>
+{% now "D d M Y" %}
+<hr>
+
+<table style="width:70%;margin-left:auto;margin-right:auto;">
+    <tr>
+        <th>Code</th>
+        <th>Account</th>
+        <th>Default Position</th>
+        <th>Action</th>
+    </tr>
+    {% for account in accounts %}
+    <tr>
+        <td>
+            {{account.c1}}-{{account.c2}}{{account.c3}}{{account.c4}}{{account.c5}}{{account.c6}}
+        </td>
+        {% if account.dp == "dr" %}
+        <td>{{account.account|title}}</td>
+        <td>Debit</td>
+        <td>
+            <a href=""><button>Edit</button></a>
+            <a href=""><button>Delete</button></a>
+        </td>
+        {% endif %}
+        
+        {% if account.dp == "cr" %}
+        <td>{{account.account|title}}</td>
+        <td>Credit</td>
+        <td>
+            <a href=""><button>Edit</button></a>
+            <a href=""><button>Delete</button></a>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>

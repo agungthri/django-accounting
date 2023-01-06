@@ -8,6 +8,7 @@
 <table style="width:70%;margin-left:auto;margin-right:auto;">
     <tr></tr>
     <tr>
+        <th>Code</th>
         <th>Account</th>
         <th>Debit</th>
         <th>Credit</th>
@@ -15,21 +16,23 @@
     {% for account, default_pos, sum_pos in datas %}
     <tr>
         {% if default_pos == 'dr' %}
-        <td>{{account}}</td>
+        <td>{{account.c1}}-{{account.c2}}{{account.c3}}{{account.c4}}{{account.c5}}{{account.c6}}</td>
+        <td style="text-indent: 30px;">{{account.account|title}}</td>
         <td align="right">{{sum_pos|intcomma}}</td>
         <td></td>
         {%endif%}
     </tr>
     <tr>
         {% if default_pos == 'cr' %}
-        <td>{{account}}</td>
+        <td>{{account.c1}}-{{account.c2}}{{account.c3}}{{account.c4}}{{account.c5}}{{account.c6}}</td>
+        <td style="text-indent: 10px;">{{account.account|title}}</td>
         <td></td>
         <td align="right">{{sum_pos|intcomma}}</td>
         {%endif%}
     </tr>
     {% endfor %}
     <tr>
-        <td><strong> Total</strong></td>
+        <td colspan="2"><strong> Total</strong></td>
         <td align="right"><strong>{{sum_all_dr|intcomma}}</strong></td>
         <td align="right"><strong>{{sum_all_cr|intcomma}}</strong></td>
     </tr>

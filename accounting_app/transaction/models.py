@@ -14,8 +14,8 @@ class Account(models.Model):
     account = models.CharField(max_length=100)
 
     def __str__(self):
-        text = f"{self.c1}-{self.c2}-{self.c3}-{self.c4}-{self.c5}-{self.c6} | {self.account}".title()
-        return text.replace("_", " ")
+        text = f"{self.c1}-{self.c2}{self.c3}{self.c4}{self.c5}{self.c6} | {self.account}".title()
+        return text
 
 
 class Transaction(models.Model):

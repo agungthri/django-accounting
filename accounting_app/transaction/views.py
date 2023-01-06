@@ -1,13 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Sum
+from django.contrib.auth.decorators import login_required
 from . import models
 from . import forms
 
 
 
 # Create your views here.
+
+@login_required(login_url='login')
 def report_laba_rugi(request):
     accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",).filter(c1__gte=4)
     account_list = []
@@ -37,7 +40,7 @@ def report_laba_rugi(request):
     })
 
 
-
+@login_required(login_url='login')
 def report_neraca(request):
     accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",).filter(c1__lte=3)
     account_list = []
@@ -67,7 +70,7 @@ def report_neraca(request):
     })
 
 
-
+@login_required(login_url='login')
 def report_neraca_saldo(request):
     accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",)
     account_list = []
@@ -97,7 +100,7 @@ def report_neraca_saldo(request):
     })
 
 
-
+@login_required(login_url='login')
 def report_buku_besar(request):
     accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",)
     data_list = []
@@ -128,14 +131,14 @@ def report_buku_besar(request):
     })
 
 
-
+@login_required(login_url='login')
 def transaction(request):
     data_transaction = models.Transaction.objects.all()
     return render(request, 'transaction/transaction.html', {
         'data_transaction':data_transaction,})
 
 
-
+@login_required(login_url='login')
 def add_transaction(request):
     if request.POST:
         account = request.POST.getlist('account')
@@ -163,7 +166,7 @@ def add_transaction(request):
         'form_credit':forms.AccountFormCredit(),})
 
 
-
+@login_required(login_url='login')
 def det_transaction(request, pk):
     transaction = models.Transaction.objects.get(pk=pk)
     return render(request, "transaction/det_transaction.html", {
@@ -171,6 +174,7 @@ def det_transaction(request, pk):
         })
 
 
+@login_required(login_url='login')
 def edt_transaction(request, pk):
     transaction = models.Transaction.objects.get(id=pk)
     journal = transaction.journal_set.all()
@@ -217,13 +221,13 @@ def edt_transaction(request, pk):
         'account_form_credit':account_form_credit,})
 
 
-
+@login_required(login_url='login')
 def del_transaction(request, pk):
     models.Transaction.objects.get(id=pk).delete()
     return HttpResponseRedirect(reverse('transaction'))
 
 
-
+@login_required(login_url='login')
 def add_account(request):
     if request.POST:
         account_id = request.POST['select_account']
@@ -252,7 +256,15 @@ def add_account(request):
         'form':forms.AccountFormAdd()})
 
 
+@login_required(login_url='login')
+def all_account(request):
+    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4","c5",)
+    return render(request, "transaction/all_account.html", {
+        "accounts":accounts
+    })
 
+
+@login_required(login_url='login')
 def del_account(request):
     if request.POST:
         account_id = request.POST['select_account']

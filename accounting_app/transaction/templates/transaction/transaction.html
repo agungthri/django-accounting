@@ -4,9 +4,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'transaction/style.css' %}">
 
-<h1>Transaksi PT. Xxxx</h1>
+<h1>Transaksi PT. AnS {{user}}</h1>
 <hr>
 <a href="{% url 'add_transaction' %}"><button>Tambah Transaksi</button></a>
+<a href="{% url 'all_account' %}"><button>List Akun</button></a>
 <a href="{% url 'report_buku_besar' %}"><button>Buku Besar</button></a>
 <a href="{% url 'report_neraca_saldo' %}"><button>Neraca Saldo</button></a>
 <a href="{% url 'report_neraca' %}"><button>Neraca</button></a>

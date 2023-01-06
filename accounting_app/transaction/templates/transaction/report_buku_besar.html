@@ -13,6 +13,7 @@
     <tr>
         <th>Date</th>
         <th>Type</th>
+        <th>Code</th>
         <th>Account</th>
         <th>Debit</th>
         <th>Credit</th>
@@ -21,8 +22,9 @@
     {% if i.pos == 'dr' %}
     <tr>
         <td style="width:10%">{{i.transaction.date|title}}</td>
-        <td style="width:25%">{{i.transaction.type|title}}</td>
-        <td>{{i.account|title}}</td>
+        <td style="width:15%">{{i.transaction.type|title}}</td>
+        <td>{{i.account.c1}}-{{i.account.c2}}{{i.account.c3}}{{i.account.c4}}{{i.account.c5}}{{i.account.c6}}</td>
+        <td>{{i.account.account|title}}</td>
         <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
         <td style="width:12%" align="right" ></td>
     </tr>
@@ -30,8 +32,9 @@
     {% if i.pos == 'cr' %}
     <tr>
         <td style="width:10%">{{i.transaction.date|title}}</td>
-        <td style="width:25%">{{i.transaction.type|title}}</td>
-        <td>{{i.account|title}}</td>
+        <td style="width:15%">{{i.transaction.type|title}}</td>
+        <td>{{i.account.c1}}-{{i.account.c2}}{{i.account.c3}}{{i.account.c4}}{{i.account.c5}}{{i.account.c6}}</td>
+        <td>{{i.account.account|title}}</td>
         <td style="width:12%" align="right" ></td>
         <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
     </tr>
@@ -39,12 +42,12 @@
     {% endfor %}
     <tr>
         {% if default_pos == 'dr' %}
-        <td colspan="3" ><strong>Total :</strong> </td>
+        <td colspan="4" ><strong>Total :</strong> </td>
         <td align="right" ><strong>{{sum_pos|intcomma}}</strong> </td>
         <td align="right" ><strong>0</strong> </td>
         {% endif %}
         {% if default_pos == 'cr' %}
-        <td colspan="3" ><strong>Total :</strong> </td>
+        <td colspan="4" ><strong>Total :</strong> </td>
         <td align="right"><strong>0</strong> </td>
         <td align="right"><strong>{{sum_pos|intcomma}}</strong> </td>
         {% endif %}
