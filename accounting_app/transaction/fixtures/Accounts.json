@@ -1,0 +1,550 @@
+[
+{
+    "pk":1,
+    "model":"transaction.account",
+    "fields":{
+        "account":"100 AKTIVA LANCAR",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":2,
+    "model":"transaction.account",
+    "fields":{
+        "account":"101 KAS",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":3,
+    "model":"transaction.account",
+    "fields":{
+        "account":"102 PERSEDIAAN BARANG DAGANG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":4,
+    "model":"transaction.account",
+    "fields":{
+        "account":"103 PIUTANG USAHA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":5,
+    "model":"transaction.account",
+    "fields":{
+        "account":"104 PENYISIHAN PIUTANG USAHA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":6,
+    "model":"transaction.account",
+    "fields":{
+        "account":"105 WESEL TAGIH",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":7,
+    "model":"transaction.account",
+    "fields":{
+        "account":"106 PERLENGKAPAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":8,
+    "model":"transaction.account",
+    "fields":{
+        "account":"107 IKLAN DIBAYAR DIMUKA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":9,
+    "model":"transaction.account",
+    "fields":{
+        "account":"108 SEWA DIBAYAR DIMUKA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":10,
+    "model":"transaction.account",
+    "fields":{
+        "account":"109 ASURANSI DIBAYAR DIMUKA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":11,
+    "model":"transaction.account",
+    "fields":{
+        "account":"110 INVESTASI JANGKA PANJANG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":12,
+    "model":"transaction.account",
+    "fields":{
+        "account":"111 INVESTASI SAHAM",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":13,
+    "model":"transaction.account",
+    "fields":{
+        "account":"112 INVESTASI OBLIGASI",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":14,
+    "model":"transaction.account",
+    "fields":{
+        "account":"120 AKTIVA TETAP",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":15,
+    "model":"transaction.account",
+    "fields":{
+        "account":"121 PERALATAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":16,
+    "model":"transaction.account",
+    "fields":{
+        "account":"122 AKUMULASI PENYUSUTAN PERALATAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":17,
+    "model":"transaction.account",
+    "fields":{
+        "account":"123 KENDARAAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":18,
+    "model":"transaction.account",
+    "fields":{
+        "account":"124 AKUMULASI PENYUSUTAN PERALATAN KENDARAAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":19,
+    "model":"transaction.account",
+    "fields":{
+        "account":"125 GEDUNG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":20,
+    "model":"transaction.account",
+    "fields":{
+        "account":"126 AKUMULASI PENYUSUTAN GEDUNG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":21,
+    "model":"transaction.account",
+    "fields":{
+        "account":"127 TANAH",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":22,
+    "model":"transaction.account",
+    "fields":{
+        "account":"130 AKTIVA TETAP TIDAK BERWUJUD",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":23,
+    "model":"transaction.account",
+    "fields":{
+        "account":"131 HAK PATEN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":24,
+    "model":"transaction.account",
+    "fields":{
+        "account":"132 HAK CIPTA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":25,
+    "model":"transaction.account",
+    "fields":{
+        "account":"133 MERK DAGANG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":26,
+    "model":"transaction.account",
+    "fields":{
+        "account":"134 GOODWILL",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":27,
+    "model":"transaction.account",
+    "fields":{
+        "account":"135 FRANCHISE",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":28,
+    "model":"transaction.account",
+    "fields":{
+        "account":"140 AKTIVA LAIN-LAIN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":29,
+    "model":"transaction.account",
+    "fields":{
+        "account":"141 MESIN YANG TIDAK DIGUNAKAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":30,
+    "model":"transaction.account",
+    "fields":{
+        "account":"142 BEBAN YANG DITANGGUHKAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":31,
+    "model":"transaction.account",
+    "fields":{
+        "account":"143 PIUTANG KEPADA PEMEGANG SAHAM",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":32,
+    "model":"transaction.account",
+    "fields":{
+        "account":"144 BEBAN EMISI SAHAM",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":33,
+    "model":"transaction.account",
+    "fields":{
+        "account":"200 KEWAJIBAN",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":34,
+    "model":"transaction.account",
+    "fields":{
+        "account":"201 UTANG USAHA",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":35,
+    "model":"transaction.account",
+    "fields":{
+        "account":"202 UTANG WESEL",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":36,
+    "model":"transaction.account",
+    "fields":{
+        "account":"203 BEBAN YANG MASIH HARUS DIBAYAR",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":37,
+    "model":"transaction.account",
+    "fields":{
+        "account":"204 UTANG GAJI",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":38,
+    "model":"transaction.account",
+    "fields":{
+        "account":"205 UTANG SEWA GEDUNG",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":39,
+    "model":"transaction.account",
+    "fields":{
+        "account":"206 UTANG PAJAK PENGHASILAN",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":40,
+    "model":"transaction.account",
+    "fields":{
+        "account":"210 KEWAJIBAN JANGKA PANJANG",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":41,
+    "model":"transaction.account",
+    "fields":{
+        "account":"211 UTANG HIPOTEK",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":42,
+    "model":"transaction.account",
+    "fields":{
+        "account":"212 UTANG OBLIGASI",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":43,
+    "model":"transaction.account",
+    "fields":{
+        "account":"213 UTANG GADAI",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":44,
+    "model":"transaction.account",
+    "fields":{
+        "account":"300 EKUITAS",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":45,
+    "model":"transaction.account",
+    "fields":{
+        "account":"301 MODAL/EKUITAS PEMILIK",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":46,
+    "model":"transaction.account",
+    "fields":{
+        "account":"302 PRIVE",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":47,
+    "model":"transaction.account",
+    "fields":{
+        "account":"400 PENDAPATAN",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":48,
+    "model":"transaction.account",
+    "fields":{
+        "account":"401 PENDAPATAN USAHA",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":49,
+    "model":"transaction.account",
+    "fields":{
+        "account":"410 PENDAPATAN DI LUAR USAHA",
+        "original_pos":"CREDIT"
+    }
+},
+
+{
+    "pk":50,
+    "model":"transaction.account",
+    "fields":{
+        "account":"500 BEBAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":51,
+    "model":"transaction.account",
+    "fields":{
+        "account":"501 BEBAN GAJI TOKO",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":52,
+    "model":"transaction.account",
+    "fields":{
+        "account":"502 BEBAN GAJI KANTOR",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":53,
+    "model":"transaction.account",
+    "fields":{
+        "account":"503 BEBAN SEWA GEDUNG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":54,
+    "model":"transaction.account",
+    "fields":{
+        "account":"504 BEBAN PENYESUAIAN PIUTANG",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":55,
+    "model":"transaction.account",
+    "fields":{
+        "account":"505 BEBAN PERLENGKAPAN KANTOR",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":56,
+    "model":"transaction.account",
+    "fields":{
+        "account":"506 BEBAN PERLENGKAPAN TOKO",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":57,
+    "model":"transaction.account",
+    "fields":{
+        "account":"507 BEBAN IKLAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":58,
+    "model":"transaction.account",
+    "fields":{
+        "account":"508 BEBAN PENYUSUTAN PERALATAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":59,
+    "model":"transaction.account",
+    "fields":{
+        "account":"509 BEBAN PENYUSUTAN",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":60,
+    "model":"transaction.account",
+    "fields":{
+        "account":"510 BEBAN BUNGA",
+        "original_pos":"DEBIT"
+    }
+},
+
+{
+    "pk":61,
+    "model":"transaction.account",
+    "fields":{
+        "account":"511 BEBAN LAIN-LAIN",
+        "original_pos":"DEBIT"
+    }
+}
+]

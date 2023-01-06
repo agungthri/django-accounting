@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+
+<h2>Detail Transaction</h2>
+<hr>
+<table>
+    <tr>
+        <th>Transaction Date</th>
+        <th>Transaction Type</th>
+        <th>Transaction Desc</th>
+        <th>Account</th>
+        <th>Position</th>
+        <th>Total</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.transaction.date }}</td>
+        <td>{{ i.transaction.type }}</td>
+        <td>{{ i.transaction.desc }}</td>
+        <td>{{ i.account }}</td>
+        <td>{{ i.pos }}</td>
+        <td>{{ i.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+<a href="{% url 'transaction' %}"><button>Kembali</button></a>

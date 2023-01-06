@@ -1,0 +1,11 @@
+<html lang="en">
+
+<h2>Hapus Sub Akun</h2>
+<hr>
+<form action="" method="post">
+{% csrf_token %}
+{{ form }}
+<button>Hapus Account</button>
+</form>
+<hr>
+<a href="{% url 'add_transaction' %}"><button>Kembali</button></a>

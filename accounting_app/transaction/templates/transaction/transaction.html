@@ -1,0 +1,38 @@
+<html lang="en">
+
+</html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+
+<h1>Transaksi PT. Xxxx</h1>
+<hr>
+<a href="{% url 'add_transaction' %}"><button>Tambah Transaksi</button></a>
+<a href="{% url 'report_buku_besar' %}"><button>Buku Besar</button></a>
+<a href="{% url 'report_neraca_saldo' %}"><button>Neraca Saldo</button></a>
+<a href="{% url 'report_neraca' %}"><button>Neraca</button></a>
+<a href="{% url 'report_laba_rugi' %}"><button>Laba Rugi</button></a>
+<hr>
+<table style="width:70%;margin-left:auto;margin-right:auto;">
+    <tr>
+        <th>Transaction Date</th>
+        <th>Transaction Type</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    {% for i in data_transaction %}
+    <tr>
+        <td>{{ i.date|title }}</td>
+        <td>{{ i.type|title }}</td>
+        <td>{{ i.desc|title }}</td>
+        <td>
+            <a href="{% url 'det_transaction' i.pk %}"><button>Detail</button></a>
+            <a href="{% url 'edt_transaction' i.pk %}"><button>Update</button></a>
+            <a href="{% url 'del_transaction' i.pk %}"><button>Delete</button></a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+<hr>
+
+
+

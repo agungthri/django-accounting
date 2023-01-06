@@ -1,0 +1,67 @@
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+<br>
+<h2 style="text-align:center;">Buku Besar</h2>
+
+{% for data, default_pos, sum_pos, account in datas %}
+<br>
+<table style="width:70%;margin-left:auto;margin-right:auto;">
+    <tr>
+        <caption><strong>{{account}}</strong></caption>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Account</th>
+        <th>Debit</th>
+        <th>Credit</th>
+    </tr>
+    {% for i in data %}
+    {% if i.pos == 'dr' %}
+    <tr>
+        <td style="width:10%">{{i.transaction.date|title}}</td>
+        <td style="width:25%">{{i.transaction.type|title}}</td>
+        <td>{{i.account|title}}</td>
+        <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
+        <td style="width:12%" align="right" ></td>
+    </tr>
+    {% endif %}
+    {% if i.pos == 'cr' %}
+    <tr>
+        <td style="width:10%">{{i.transaction.date|title}}</td>
+        <td style="width:25%">{{i.transaction.type|title}}</td>
+        <td>{{i.account|title}}</td>
+        <td style="width:12%" align="right" ></td>
+        <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    <tr>
+        {% if default_pos == 'dr' %}
+        <td colspan="3" ><strong>Total :</strong> </td>
+        <td align="right" ><strong>{{sum_pos|intcomma}}</strong> </td>
+        <td align="right" ><strong>0</strong> </td>
+        {% endif %}
+        {% if default_pos == 'cr' %}
+        <td colspan="3" ><strong>Total :</strong> </td>
+        <td align="right"><strong>0</strong> </td>
+        <td align="right"><strong>{{sum_pos|intcomma}}</strong> </td>
+        {% endif %}
+    </tr>
+</table>
+<br>
+{% endfor %}
+
+<br>
+<table style="width:70%;margin-left:auto;margin-right:auto;">
+    <tr>
+        <th>Debit</th>
+        <th>Credit</th>
+    </tr>
+    <tr>
+        <td style="text-align:center"><strong>{{total_sum_all_dr|intcomma}}</strong></td>
+        <td style="text-align:center"><strong>{{total_sum_all_cr|intcomma}}</strong></td>
+    </tr>
+</table>
+<br>

@@ -1,0 +1,40 @@
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+<br>
+<h3 style="text-align:center;">Laba Rugi</h3>
+<br>
+
+<table style="width:70%;margin-left:auto;margin-right:auto;">
+    <tr></tr>
+    <tr>
+        <th>Account</th>
+        <th>Debit</th>
+        <th>Credit</th>
+    </tr>
+    {% for account, default_pos, sum_pos in datas %}
+    <tr>
+        {% if default_pos == 'dr' %}
+        <td>{{account}}</td>
+        <td align="right">{{sum_pos|intcomma}}</td>
+        <td></td>
+        {%endif%}
+    </tr>
+    <tr>
+        {% if default_pos == 'cr' %}
+        <td>{{account}}</td>
+        <td></td>
+        <td align="right">{{sum_pos|intcomma}}</td>
+        {%endif%}
+    </tr>
+    {% endfor %}
+    <tr>
+        <td><strong> Total</strong></td>
+        <td align="right"><strong>{{sum_all_dr|intcomma}}</strong></td>
+        <td align="right"><strong>{{sum_all_cr|intcomma}}</strong></td>
+    </tr>
+</table>
+
+
+
+

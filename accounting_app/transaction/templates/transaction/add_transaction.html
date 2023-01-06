@@ -1,0 +1,53 @@
+<html lang="en"></html>
+{% load static %}
+<h2>Tambah Transaksi</h2>
+
+<a href="{% url 'add_account' %}"><button>Buat Sub Akun</button></a>
+<a href="{% url 'del_account' %}"><button>Hapus Sub Akun</button></a>
+
+<li id="debit-hidden" hidden>{{ form_debit }}</li>
+<li id="credit-hidden" hidden>{{ form_credit }}</li>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    
+    <hr>
+    {{ date }}
+    {{ type }}
+    {{ desc }}
+    <hr>
+    
+<p>Dr Account :
+    <button onclick='addInputDebit()'>[+] Journal</button>
+    <button onclick='delInputDebit()'>[-] Journal</button>
+    <input type="text" name="sum" id="total-account-debit" readonly>
+</p>
+<div id="debit">
+    <li id="debit-account">{{ form_debit }}</li>
+</div>
+<hr>
+
+
+<p>Cr Account :
+    <button onclick='addInputCredit()'>[+] Journal</button>
+    <button onclick='delInputCredit()'>[-] Journal</button>
+    <input type="text" name="sum" id="total-account-credit" readonly>
+</p>
+<div id="credit">
+    <li id="credit-account">{{ form_credit }}</li>
+</div>
+<hr>
+
+
+<button>SUBMIT</button>
+</form>
+
+
+
+<a href="{% url 'transaction' %}"><button>Kembali</button></a>
+
+<script src="{% static 'transaction/script.js' %}"></script>
+
+
+

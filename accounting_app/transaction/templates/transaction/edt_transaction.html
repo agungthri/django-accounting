@@ -1,0 +1,25 @@
+<h3>Edit Transaction</h3>
+<hr>
+
+<form action="" method="post">
+    {% csrf_token %}
+{{ date }}
+{{ type }}
+{{ desc }}
+<hr>
+
+
+{% for i in account_form_debit %}
+<li>{{i}}</li>
+{% endfor %}
+<hr>
+
+
+{% for i in account_form_credit %}
+<li>{{i}}</li>
+{% endfor %}
+<hr>
+<button>Save Update</button>
+</form>
+
+<a href="{% url 'transaction' %}"><button>Kembali</button></a>
