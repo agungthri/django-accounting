@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -12,6 +13,7 @@ class Account(models.Model):
     c6 = models.SmallIntegerField()
     dp = models.CharField(max_length=3)
     account = models.CharField(max_length=100)
+    user = models.CharField(max_length=20)
 
     def __str__(self):
         text = f"{self.c1}-{self.c2}{self.c3}{self.c4}{self.c5}{self.c6} | {self.account}".title()
@@ -22,6 +24,7 @@ class Transaction(models.Model):
     date = models.DateField()
     type = models.CharField(max_length=50)
     desc = models.CharField(max_length=100)
+    user = models.CharField(max_length=20)
 
     def __str__(self):
         return f"{self.date} | {self.type}"

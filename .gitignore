@@ -11,6 +11,3 @@ __pycache__/
 
 #env 
 Env/
-
-#db
-db.sqlite3

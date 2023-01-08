@@ -3,7 +3,8 @@
 <link rel="stylesheet" href="{% static 'transaction/style.css' %}">
 
 <hr>
-<a href=""><button>Kembali</button></a>
+<a href="{% url 'transaction' %}"><button>Kembali</button></a>
+<a href="{% url 'add_account' %}"><button>Tambah Akun</button></a>
 {% now "D d M Y" %}
 <hr>
 

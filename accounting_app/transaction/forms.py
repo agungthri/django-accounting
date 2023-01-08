@@ -1,11 +1,13 @@
 from django import forms
 from . import models
+from django.db.models import Q
 
 
 
 class AccountFormAdd(forms.Form):
+
     select_account = forms.ModelChoiceField(
-        queryset=models.Account.objects.all().order_by("c1","c2","c3","c4","c5","c6"),
+        queryset=models.Account.objects.all(),
         required=True,
         label='Masukkan Sub Account')
     sub_account_name = forms.CharField(
@@ -13,17 +15,34 @@ class AccountFormAdd(forms.Form):
         required=True,
         label='Nama Sub Account')
 
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('user', None)
+        super(AccountFormAdd, self).__init__(*args, **kwargs)
+        self.fields['select_account'].queryset = models.Account.objects.filter(
+            Q(user="init") | Q(user=self.request)
+            ).order_by("c1","c2","c3","c4","c5","c6")
+   
+
 
 
 class AccountFormDel(forms.Form):
+
     select_account = forms.ModelChoiceField(
-        queryset=models.Account.objects.all().order_by("c1","c2","c3","c4","c5","c6"),
+        queryset=models.Account.objects.all(),
         required=True,
         label='Masukkan Sub Account')
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('user', None)
+        super(AccountFormDel, self).__init__(*args, **kwargs)
+        self.fields['select_account'].queryset = models.Account.objects.filter(
+            Q(user="init") | Q(user=self.request)
+            ).order_by("c1","c2","c3","c4","c5","c6")
     
 
 
 class Date(forms.Form):
+
     date = forms.DateField(
         widget=forms.widgets.DateInput(attrs={'type':'date'}),
         label="Date")
@@ -31,6 +50,7 @@ class Date(forms.Form):
 
 
 class Desc(forms.Form):
+
     desc = forms.CharField(
         max_length=100,
         label="Description")
@@ -38,6 +58,7 @@ class Desc(forms.Form):
 
 
 class Type(forms.Form):
+
     type = forms.CharField(
         max_length=100,
         label="Type")
@@ -45,8 +66,9 @@ class Type(forms.Form):
 
 
 class AccountFormDebit(forms.Form):
+    
     account = forms.ModelChoiceField(
-        queryset=models.Account.objects.all().order_by("c1","c2","c3","c4","c5","c6"),
+        queryset=models.Account.objects.all(),
         required=True,
         label='Dr')
     amount = forms.IntegerField(
@@ -55,12 +77,19 @@ class AccountFormDebit(forms.Form):
             "onblur":"findTotalDebit()",
             "class":"sum-debit"}))
     pos = forms.CharField(widget=forms.HiddenInput(), initial="dr")
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('user', None)
+        super(AccountFormDebit, self).__init__(*args, **kwargs)
+        self.fields['account'].queryset = models.Account.objects.filter(
+            Q(user="init") | Q(user=self.request)
+            ).order_by("c1","c2","c3","c4","c5","c6")
     
 
 
 class AccountFormCredit(forms.Form):
     account = forms.ModelChoiceField(
-        queryset=models.Account.objects.all().order_by("c1","c2","c3","c4","c5","c6"),
+        queryset=models.Account.objects.all(),
         required=True,
         label='Cr')
     amount = forms.IntegerField(
@@ -69,6 +98,13 @@ class AccountFormCredit(forms.Form):
             "onblur":"findTotalCredit()",
             "class":"sum-credit"}))
     pos = forms.CharField(widget=forms.HiddenInput(), initial="cr")
+
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('user', None)
+        super(AccountFormCredit, self).__init__(*args, **kwargs)
+        self.fields['account'].queryset = models.Account.objects.filter(
+            Q(user="init") | Q(user=self.request)
+            ).order_by("c1","c2","c3","c4","c5","c6")
     
 
 

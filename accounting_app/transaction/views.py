@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from django.db.models import Sum
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from . import models
 from . import forms
@@ -12,7 +12,7 @@ from . import forms
 
 @login_required(login_url='login')
 def transaction(request):
-    data_transaction = models.Transaction.objects.all()
+    data_transaction = models.Transaction.objects.all().filter(user=request.user)
     return render(request, 'transaction/transaction.html', {
         'data_transaction':data_transaction,})
 
@@ -26,7 +26,8 @@ def add_transaction(request):
         transaction = models.Transaction.objects.create(
             date=request.POST.getlist('date')[0],
             type=request.POST.getlist('type')[0],
-            desc=request.POST.getlist('desc')[0])
+            desc=request.POST.getlist('desc')[0],
+            user=request.user)
         account_dict = {i.pk:i for i in models.Account.objects.filter(pk__in=account)}
         obj_list = []
         for i in zip(account, pos, total):
@@ -41,8 +42,8 @@ def add_transaction(request):
         'date':forms.Date(),
         'type':forms.Type(),
         'desc':forms.Desc(),
-        'form_debit':forms.AccountFormDebit(),
-        'form_credit':forms.AccountFormCredit(),})
+        'form_debit':forms.AccountFormDebit(user=request.user),
+        'form_credit':forms.AccountFormCredit(user=request.user),})
 
 
 @login_required(login_url='login')
@@ -66,14 +67,16 @@ def edt_transaction(request, pk):
                     initial={
                         'account':i.account,
                         'pos':i.pos,
-                        'amount':i.total}))
+                        'amount':i.total},
+                        user=request.user))
         if i.pos == 'cr':
             account_form_credit.append(
                 forms.AccountFormCredit(
                     initial={
                         'account':i.account,
                         'pos':i.pos,
-                        'amount':i.total}))
+                        'amount':i.total},
+                        user=request.user))
     if request.POST:
         account = request.POST.getlist('account')
         pos = request.POST.getlist('pos')
@@ -81,6 +84,7 @@ def edt_transaction(request, pk):
         transaction.date=request.POST.getlist('date')[0]
         transaction.type=request.POST.getlist('type')[0]
         transaction.desc=request.POST.getlist('desc')[0]
+        transaction.user=request.user
         transaction.save()
         account_dict = {i.pk:i for i in models.Account.objects.filter(pk__in=account)}
         obj_all = []
@@ -125,19 +129,25 @@ def add_account(request):
             if value != 0:
                 filter[key] = value
                 index += 1
-        result = models.Account.objects.filter(**filter)
+        c1 = Q(user="init")
+        c2 = Q(user=request.user)
+        result = models.Account.objects.filter(**filter).filter(c1 | c2)
         max_value = max(list(result.values_list(f"c{index}", flat=True)))
         code_list[f"c{index}"] = max_value + 1
         code_list['account'] = account.account + " / " + sub_account
         code_list['dp'] = account.dp
+        code_list['user'] = request.user
         models.Account.objects.create(**code_list)
     return render(request, 'transaction/add_account.html', {
-        'form':forms.AccountFormAdd()})
+        'form':forms.AccountFormAdd(user=request.user)})
 
 
 @login_required(login_url='login')
 def all_account(request):
-    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4","c5",)
+    c1 = Q(user="init")
+    c2 = Q(user=request.user)
+    accounts = models.Account.objects.filter(c1 | c2)
+    accounts = accounts.order_by("c1","c2","c3","c4","c5",)
     return render(request, "transaction/all_account.html", {
         "accounts":accounts
     })
@@ -150,7 +160,7 @@ def del_account(request):
         if int(account_id) > 92:
             models.Account.objects.get(id=account_id).delete()
     return render(request, "transaction/del_account.html", {
-        "form":forms.AccountFormDel()
+        "form":forms.AccountFormDel(user=request.user)
     })
 
 

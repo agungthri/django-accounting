@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.db.models import Sum
+from django.db.models import Sum, Q
 from django.contrib.auth.decorators import login_required
 from transaction import models
 
@@ -10,14 +10,17 @@ def report(request):
 
 @login_required(login_url='login')
 def report_laba_rugi(request):
-    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",).filter(c1__gte=4)
+    c1 = Q(user="init")
+    c2 = Q(user=request.user)
+    accounts = models.Account.objects.filter(c1 | c2)
+    accounts = accounts.order_by("c1","c2","c3","c4",).filter(c1__gte=4)
     account_list = []
     default_pos_list = []
     default_pos_sum_list = []
     sum_all_dr = 0
     sum_all_cr = 0
     for account in accounts:
-        data = account.journal_set.all()
+        data = account.journal_set.filter(transaction__user=request.user)
         if data:
             default_pos  = account.dp
             total_sum_dr = data.filter(pos="dr").aggregate(Sum("total"))['total__sum'] or 0
@@ -40,14 +43,17 @@ def report_laba_rugi(request):
 
 @login_required(login_url='login')
 def report_neraca(request):
-    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",).filter(c1__lte=3)
+    c1 = Q(user="init")
+    c2 = Q(user=request.user)
+    accounts = models.Account.objects.filter(c1 | c2)
+    accounts = accounts.order_by("c1","c2","c3","c4",).filter(c1__lte=3)
     account_list = []
     default_pos_list = []
     default_pos_sum_list = []
     sum_all_dr = 0
     sum_all_cr = 0
     for account in accounts:
-        data = account.journal_set.all()
+        data = account.journal_set.filter(transaction__user=request.user)
         if data:
             default_pos  = account.dp
             total_sum_dr = data.filter(pos="dr").aggregate(Sum("total"))['total__sum'] or 0
@@ -70,14 +76,17 @@ def report_neraca(request):
 
 @login_required(login_url='login')
 def report_neraca_saldo(request):
-    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",)
+    c1 = Q(user="init")
+    c2 = Q(user=request.user)
+    accounts = models.Account.objects.filter(c1 | c2)
+    accounts = accounts.order_by("c1","c2","c3","c4",)
     account_list = []
     default_pos_list = []
     default_pos_sum_list = []
     sum_all_dr = 0
     sum_all_cr = 0
     for account in accounts:
-        data = account.journal_set.all()
+        data = account.journal_set.filter(transaction__user=request.user)
         if data:
             default_pos  = account.dp
             total_sum_dr = data.filter(pos="dr").aggregate(Sum("total"))['total__sum'] or 0
@@ -100,7 +109,10 @@ def report_neraca_saldo(request):
 
 @login_required(login_url='login')
 def report_buku_besar(request):
-    accounts = models.Account.objects.all().order_by("c1","c2","c3","c4",)
+    c1 = Q(user="init")
+    c2 = Q(user=request.user)
+    accounts = models.Account.objects.filter(c1 | c2)
+    accounts = accounts.order_by("c1","c2","c3","c4",)
     data_list = []
     default_pos_list = []
     default_pos_sum_list = []
@@ -108,7 +120,7 @@ def report_buku_besar(request):
     total_sum_all_dr = 0
     total_sum_all_cr = 0
     for account in accounts:
-        data = account.journal_set.all()
+        data = account.journal_set.filter(transaction__user=request.user)
         if data:
             default_pos  = account.dp
             total_sum_dr = data.filter(pos="dr").aggregate(Sum("total"))['total__sum'] or 0
