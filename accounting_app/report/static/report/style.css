@@ -1,0 +1,8 @@
+table {
+  border-collapse: collapse;
+  font-family:'Courier New', Courier, monospace;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}

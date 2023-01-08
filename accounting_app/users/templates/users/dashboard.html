@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<strong>Hello, {{ user.username|default:'Guest'|title}}</strong>
+
+<div>
+    {% if user.is_authenticated %}
+
+    <hr>
+    <a href="{% url 'logout' %}"><button>Logout</button></a>
+    <a href="{% url 'password_change' %}"><button>Change Password</button></a>
+    <hr>
+    <a href="{% url 'transaction' %}"><button>Transaction</button></a>
+    <a href="{% url 'report' %}"><button>Report</button></a>
+
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+</div>
+
+{% endblock %}

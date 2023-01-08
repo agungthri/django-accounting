@@ -8,10 +8,6 @@
 <hr>
 <a href="{% url 'add_transaction' %}"><button>Tambah Transaksi</button></a>
 <a href="{% url 'all_account' %}"><button>List Akun</button></a>
-<a href="{% url 'report_buku_besar' %}"><button>Buku Besar</button></a>
-<a href="{% url 'report_neraca_saldo' %}"><button>Neraca Saldo</button></a>
-<a href="{% url 'report_neraca' %}"><button>Neraca</button></a>
-<a href="{% url 'report_laba_rugi' %}"><button>Laba Rugi</button></a>
 <hr>
 <table style="width:70%;margin-left:auto;margin-right:auto;">
     <tr>
@@ -34,6 +30,7 @@
     {%endfor%}
 </table>
 <hr>
+<a href="{% url 'dashboard' %}"><button>Back</button></a>
 
 
 
