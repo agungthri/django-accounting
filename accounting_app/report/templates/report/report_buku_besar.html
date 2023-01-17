@@ -1,56 +1,57 @@
-{% load static %}
+{% extends 'report/report.html' %}
 {% load humanize %}
-<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+{% block content %}
+
 <br>
 <h2 style="text-align:center;">Buku Besar</h2>
+<br>
 
-{% for data, default_pos, sum_pos, account in datas %}
+{% for account_list, total_account in data %}
 <br>
 <table style="width:70%;margin-left:auto;margin-right:auto;">
+    <caption><strong>{{account_list}}</strong></caption>
+    <tr></tr>
     <tr>
-        <caption><strong>{{account}}</strong></caption>
+        <td style="width:10%"><strong>Date</strong></td>
+        <td style="width:8%"><strong>Code</strong></td>
+        <td style="width:10%"><strong>Type</strong></td>
+        <td style="width:30%"><strong>Account</strong></td>
+        <td align="right" style="width:12%"><strong>Debit</strong></td>
+        <td align="right" style="width:12%"><strong>Credit</strong></td>
     </tr>
+    {% for i in account_list.journal_set.all %}
     <tr>
-        <th>Date</th>
-        <th>Type</th>
-        <th>Code</th>
-        <th>Account</th>
-        <th>Debit</th>
-        <th>Credit</th>
-    </tr>
-    {% for i in data %}
-    {% if i.pos == 'dr' %}
-    <tr>
-        <td style="width:10%">{{i.transaction.date|title}}</td>
-        <td style="width:15%">{{i.transaction.type|title}}</td>
+        {% if i.pos == 'dr' %}
+        <td>{{i.transaction.date|title}}</td>
         <td>{{i.account.c1}}-{{i.account.c2}}{{i.account.c3}}{{i.account.c4}}{{i.account.c5}}{{i.account.c6}}</td>
-        <td>{{i.account.account|title}}</td>
-        <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
-        <td style="width:12%" align="right" ></td>
+        <td>{{i.transaction.type|title}}</td>
+        <td style="text-indent: 0px;">{{i.account.account|title}}</td>
+        <td align="right">{{i.total|intcomma}}</td>
+        <td></td>
+        {% endif %}
     </tr>
-    {% endif %}
-    {% if i.pos == 'cr' %}
-    <tr>
-        <td style="width:10%">{{i.transaction.date|title}}</td>
-        <td style="width:15%">{{i.transaction.type|title}}</td>
+        {% if i.pos == 'cr' %}
+        <td>{{i.transaction.date|title}}</td>
         <td>{{i.account.c1}}-{{i.account.c2}}{{i.account.c3}}{{i.account.c4}}{{i.account.c5}}{{i.account.c6}}</td>
-        <td>{{i.account.account|title}}</td>
-        <td style="width:12%" align="right" ></td>
-        <td style="width:12%" align="right" >{{i.total|intcomma}}</td>
-    </tr>
-    {% endif %}
+        <td>{{i.transaction.type|title}}</td>
+        <td style="text-indent: 0px;">{{i.account.account|title}}</td>
+        <td></td>
+        <td align="right">{{i.total|intcomma}}</td>
+        {% endif %}
     {% endfor %}
     <tr>
-        {% if default_pos == 'dr' %}
-        <td colspan="4" ><strong>Total :</strong> </td>
-        <td align="right" ><strong>{{sum_pos|intcomma}}</strong> </td>
-        <td align="right" ><strong></strong> </td>
+
+        <td colspan="4"><strong>Total</strong></td>
+        {% if total_account.dp == 'dr' %}
+        <td align="right"><strong>{{total_account.total|intcomma}}</strong></td>
+        <td></td>
         {% endif %}
-        {% if default_pos == 'cr' %}
-        <td colspan="4" ><strong>Total :</strong> </td>
-        <td align="right"><strong></strong> </td>
-        <td align="right"><strong>{{sum_pos|intcomma}}</strong> </td>
+
+        {% if total_account.dp == 'cr' %}
+        <td></td>
+        <td align="right"><strong>{{total_account.total|intcomma}}</strong></td>
         {% endif %}
+
     </tr>
 </table>
 <br>
@@ -59,12 +60,11 @@
 <br>
 <table style="width:70%;margin-left:auto;margin-right:auto;">
     <tr>
-        <th>Debit</th>
-        <th>Credit</th>
+        <th align="center">Debit</th>
+        <th align="center">Credit</th>
     </tr>
-    <tr>
-        <td style="text-align:center"><strong>{{total_sum_all_dr|intcomma}}</strong></td>
-        <td style="text-align:center"><strong>{{total_sum_all_cr|intcomma}}</strong></td>
-    </tr>
+    {% for i in total %}
+    <th align="center">{{i.total__sum|intcomma}}</th>
+    {% endfor %}
 </table>
-<br>
+{% endblock %}

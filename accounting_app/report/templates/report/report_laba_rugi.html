@@ -1,43 +1,39 @@
-{% load static %}
+{% extends 'report/report.html' %}
 {% load humanize %}
-<link rel="stylesheet" href="{% static 'transaction/style.css' %}">
+{% block content %}
 <br>
-<h3 style="text-align:center;">Laba Rugi</h3>
+<h2 style="text-align:center;">Laba Rugi</h2>
 <br>
-
 <table style="width:70%;margin-left:auto;margin-right:auto;">
-    <tr></tr>
     <tr>
-        <th>Code</th>
+        <th style="width:8%">Code</th>
         <th>Account</th>
         <th>Debit</th>
         <th>Credit</th>
     </tr>
-    {% for account, default_pos, sum_pos in datas %}
+    {% for account_list, total_list in data %}
     <tr>
-        {% if default_pos == 'dr' %}
-        <td>{{account.c1}}-{{account.c2}}{{account.c3}}{{account.c4}}{{account.c5}}{{account.c6}}</td>
-        <td style="text-indent: 30px;">{{account.account|title}}</td>
-        <td align="right">{{sum_pos|intcomma}}</td>
+        {% if account_list.dp == 'dr' %}
+        <td>{{account_list.c1}}-{{account_list.c2}}{{account_list.c3}}{{account_list.c4}}{{account_list.c5}}{{account_list.c6}}</td>
+        <td style="text-indent: 20px;">{{account_list.account|title}}</td>
+        <td align="right" style="width:12%">{{total_list.total|intcomma}}</td>
         <td></td>
-        {%endif%}
+        {% endif %}
     </tr>
     <tr>
-        {% if default_pos == 'cr' %}
-        <td>{{account.c1}}-{{account.c2}}{{account.c3}}{{account.c4}}{{account.c5}}{{account.c6}}</td>
-        <td style="text-indent: 10px;">{{account.account|title}}</td>
+        {% if account_list.dp == 'cr' %}
+        <td>{{account_list.c1}}-{{account_list.c2}}{{account_list.c3}}{{account_list.c4}}{{account_list.c5}}{{account_list.c6}}</td>
+        <td style="text-indent: 0px;">{{account_list.account|title}}</td>
         <td></td>
-        <td align="right">{{sum_pos|intcomma}}</td>
-        {%endif%}
+        <td align="right" style="width:12%">{{total_list.total|intcomma}}</td>
+        {% endif %}
     </tr>
     {% endfor %}
     <tr>
-        <td colspan="2"><strong> Total</strong></td>
-        <td align="right"><strong>{{sum_all_dr|intcomma}}</strong></td>
-        <td align="right"><strong>{{sum_all_cr|intcomma}}</strong></td>
+        <th colspan="2">Total</th>
+        <th align="right">{{dr.dr|intcomma}}</th>
+        <th align="right">{{cr.cr|intcomma}}</th>
     </tr>
 </table>
 
-
-
-
+{% endblock %}

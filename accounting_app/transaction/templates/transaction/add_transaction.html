@@ -1,3 +1,7 @@
+{% extends 'transaction/base.html' %}
+
+{% block content %}
+
 <html lang="en"></html>
 {% load static %}
 <h2>Tambah Transaksi</h2>
@@ -5,49 +9,62 @@
 <a href="{% url 'add_account' %}"><button>Buat Sub Akun</button></a>
 <a href="{% url 'del_account' %}"><button>Hapus Sub Akun</button></a>
 
-<li id="debit-hidden" hidden>{{ form_debit }}</li>
-<li id="credit-hidden" hidden>{{ form_credit }}</li>
-
 
 <form action="" method="post">
     {% csrf_token %}
     
+<div style="text-align: center; background-color: lightblue;">
     <hr>
     {{ date }}
     {{ type }}
     {{ desc }}
     <hr>
+</div>
+
+
+
+
+<div style="width: 100%; ">
+    <div style="float:left; width: 49.5%; background-color: lightblue;">
+        <div style="padding-left: 10px; text-align: center; margin-bottom: 10px; margin-top: 10px;">
+            <strong>Dr Account :</strong> 
+            <button id="add-input-debit">Add Journal</button>
+            <button id="del-input-debit" onclick='delInputDebit()'>Del Journal</button>
+            <input type="text" name="sum" id="total-account-debit" style="text-align:right;" readonly>
+        </div>
+        <div id="debit" style="padding-left: 10px; padding-right: 5px;">
+            <div style="margin-bottom: 5px;" id="debit-account">{{ form_debit }}</div>
+        </div>
+    </div>
+
     
-<p>Dr Account :
-    <button onclick='addInputDebit()'>[+] Journal</button>
-    <button onclick='delInputDebit()'>[-] Journal</button>
-    <input type="text" name="sum" id="total-account-debit" readonly>
-</p>
-<div id="debit">
-    <li id="debit-account">{{ form_debit }}</li>
-</div>
+
+    <div style="float:right; width: 49.5%; background-color: lightblue;">
+        <div style="padding-left: 10px; text-align: center; margin-bottom: 10px; margin-top: 10px;">
+            <strong>Cr Account :</strong> 
+            <button id="add-input-credit"> Add Journal</button>
+            <button onclick='delInputCredit()'><Del></Del>Del Journal</button>
+            <input type="text" name="sum" id="total-account-credit" style="text-align:right;" readonly>
+        </div>
+
+        <div id="credit" style="padding-left: 10px; padding-right: 5px;">
+            <div style="margin-bottom: 5px;" id="credit-account">{{ form_credit }}</div>
+        </div>
+    </div>
+    </div>
+
+<div style="clear:both"></div>
+
 <hr>
-
-
-<p>Cr Account :
-    <button onclick='addInputCredit()'>[+] Journal</button>
-    <button onclick='delInputCredit()'>[-] Journal</button>
-    <input type="text" name="sum" id="total-account-credit" readonly>
-</p>
-<div id="credit">
-    <li id="credit-account">{{ form_credit }}</li>
-</div>
-<hr>
-
 
 <button>SUBMIT</button>
 </form>
 
 
-
 <a href="{% url 'transaction' %}"><button>Kembali</button></a>
-
 <script src="{% static 'transaction/script.js' %}"></script>
+
+{% endblock %}
 
 
 

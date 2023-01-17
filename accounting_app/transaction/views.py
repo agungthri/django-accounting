@@ -24,9 +24,9 @@ def add_transaction(request):
         pos = request.POST.getlist('pos')
         total = request.POST.getlist('amount')
         transaction = models.Transaction.objects.create(
-            date=request.POST.getlist('date')[0],
-            type=request.POST.getlist('type')[0],
-            desc=request.POST.getlist('desc')[0],
+            date=request.POST.get('date'),
+            type=request.POST.get('type'),
+            desc=request.POST.get('desc'),
             user=request.user)
         account_dict = {i.pk:i for i in models.Account.objects.filter(pk__in=account)}
         obj_list = []
@@ -81,10 +81,10 @@ def edt_transaction(request, pk):
         account = request.POST.getlist('account')
         pos = request.POST.getlist('pos')
         total = request.POST.getlist('amount')
-        transaction.date=request.POST.getlist('date')[0]
-        transaction.type=request.POST.getlist('type')[0]
-        transaction.desc=request.POST.getlist('desc')[0]
-        transaction.user=request.user
+        transaction.date=request.POST.get('date')
+        transaction.type=request.POST.get('type')
+        transaction.desc=request.POST.get('desc')
+        transaction.user=str(request.user)
         transaction.save()
         account_dict = {i.pk:i for i in models.Account.objects.filter(pk__in=account)}
         obj_all = []
@@ -142,6 +142,7 @@ def add_account(request):
         'form':forms.AccountFormAdd(user=request.user)})
 
 
+
 @login_required(login_url='login')
 def all_account(request):
     c1 = Q(user="init")
@@ -151,6 +152,7 @@ def all_account(request):
     return render(request, "transaction/all_account.html", {
         "accounts":accounts
     })
+
 
 
 @login_required(login_url='login')

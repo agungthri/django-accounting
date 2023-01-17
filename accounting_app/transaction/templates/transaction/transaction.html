@@ -1,10 +1,10 @@
+{% extends 'transaction/base.html' %}
 <html lang="en">
 
+{% block content %}
 </html>
 {% load static %}
 <link rel="stylesheet" href="{% static 'transaction/style.css' %}">
-
-<h1>Transaksi PT. AnS {{user}}</h1>
 <hr>
 <a href="{% url 'add_transaction' %}"><button>Tambah Transaksi</button></a>
 <a href="{% url 'all_account' %}"><button>List Akun</button></a>
@@ -31,6 +31,7 @@
 </table>
 <hr>
 <a href="{% url 'dashboard' %}"><button>Back</button></a>
+{% endblock %}
 
 
 

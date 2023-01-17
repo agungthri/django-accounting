@@ -15,6 +15,16 @@ class Account(models.Model):
     account = models.CharField(max_length=100)
     user = models.CharField(max_length=20)
 
+    class Meta:
+        ordering = [
+            'c1',
+            'c2',
+            'c3',
+            'c4',
+            'c5',
+            'c6',
+        ]
+
     def __str__(self):
         text = f"{self.c1}-{self.c2}{self.c3}{self.c4}{self.c5}{self.c6} | {self.account}".title()
         return text
@@ -38,6 +48,9 @@ class Journal(models.Model):
 
     def __str__(self):
         return f"{self.transaction} | {self.account}"
+    
+
+        
 
 
 

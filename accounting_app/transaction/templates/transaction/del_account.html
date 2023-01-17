@@ -1,3 +1,7 @@
+{% extends 'transaction/base.html' %}
+
+{% block content %}
+
 <html lang="en">
 
 <h2>Hapus Sub Akun</h2>
@@ -9,3 +13,13 @@
 </form>
 <hr>
 <a href="{% url 'add_transaction' %}"><button>Kembali</button></a>
+
+<script>
+    $(document).ready(function () {
+    $("select").chosen({
+       placeholder_text_single:"Account",
+       allow_single_deselect: true});
+ });
+</script>
+
+{% endblock %}

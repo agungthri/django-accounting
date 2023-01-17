@@ -1,3 +1,6 @@
+{% extends 'transaction/base.html' %}
+
+{% block content %}
 {% load static %}
 {% load humanize %}
 <link rel="stylesheet" href="{% static 'transaction/style.css' %}">
@@ -5,6 +8,7 @@
 <hr>
 <a href="{% url 'transaction' %}"><button>Kembali</button></a>
 <a href="{% url 'add_account' %}"><button>Tambah Akun</button></a>
+<a href="{% url 'del_account' %}"><button>Hapus Akun</button></a>
 {% now "D d M Y" %}
 <hr>
 
@@ -40,3 +44,4 @@
     </tr>
     {% endfor %}
 </table>
+{% endblock %}

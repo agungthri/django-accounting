@@ -69,13 +69,16 @@ class AccountFormDebit(forms.Form):
     
     account = forms.ModelChoiceField(
         queryset=models.Account.objects.all(),
+        empty_label="",
         required=True,
-        label='Dr')
+        label="")
     amount = forms.IntegerField(
-        label="Total",
+        label="",
         widget=forms.NumberInput(attrs={
             "onblur":"findTotalDebit()",
-            "class":"sum-debit"}))
+            "class":"sum-debit",
+            "style":"text-align:right;",
+            "placeholder":"Total Debit"}))
     pos = forms.CharField(widget=forms.HiddenInput(), initial="dr")
 
     def __init__(self, *args, **kwargs):
@@ -90,13 +93,16 @@ class AccountFormDebit(forms.Form):
 class AccountFormCredit(forms.Form):
     account = forms.ModelChoiceField(
         queryset=models.Account.objects.all(),
+        empty_label="",
         required=True,
-        label='Cr')
+        label='')
     amount = forms.IntegerField(
-        label="Total",
+        label="",
         widget=forms.NumberInput(attrs={
             "onblur":"findTotalCredit()",
-            "class":"sum-credit"}))
+            "class":"sum-credit",
+            "style":"text-align:right;",
+            "placeholder":"Total Credit"}))
     pos = forms.CharField(widget=forms.HiddenInput(), initial="cr")
 
     def __init__(self, *args, **kwargs):

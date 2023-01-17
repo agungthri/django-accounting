@@ -1,4 +1,8 @@
+{% extends 'transaction/base.html' %}
+
+{% block content %}
 {% load static %}
+{% load humanize %}
 <link rel="stylesheet" href="{% static 'transaction/style.css' %}">
 
 <h2>Detail Transaction</h2>
@@ -14,14 +18,15 @@
     </tr>
     {% for i in data %}
     <tr>
-        <td>{{ i.transaction.date }}</td>
+        <td>{{ i.transaction.date|title }}</td>
         <td>{{ i.transaction.type }}</td>
         <td>{{ i.transaction.desc }}</td>
         <td>{{ i.account }}</td>
-        <td>{{ i.pos }}</td>
-        <td>{{ i.total }}</td>
+        <td>{{ i.pos|title }}</td>
+        <td>{{ i.total|intcomma }}</td>
     </tr>
     {% endfor %}
 </table>
 <hr>
 <a href="{% url 'transaction' %}"><button>Kembali</button></a>
+{% endblock %}

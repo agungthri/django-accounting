@@ -6,3 +6,7 @@ table {
 tr {
   border-bottom: 1px solid black;
 }
+
+th, td {
+  border-color: #96D4D4;
+}

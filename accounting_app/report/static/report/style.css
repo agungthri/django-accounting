@@ -1,8 +1,10 @@
-table {
-  border-collapse: collapse;
-  font-family:'Courier New', Courier, monospace;
+table, th, td {
+  border: 1px solid;
+  font-family:'Times New Roman', Times, serif;
+  
 }
 
-tr {
-  border-bottom: 1px solid black;
+table {
+  border-collapse: collapse;
 }
+

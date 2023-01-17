@@ -1,3 +1,6 @@
+{% extends 'transaction/base.html' %}
+
+{% block content %}
 <h3>Edit Transaction</h3>
 <hr>
 
@@ -23,3 +26,13 @@
 </form>
 
 <a href="{% url 'transaction' %}"><button>Kembali</button></a>
+
+<script>
+    $(document).ready(function () {
+    $("select").chosen({
+       placeholder_text_single:"Account",
+       allow_single_deselect: true});
+ });
+</script>
+
+{% endblock %}

@@ -2,7 +2,7 @@
 {% load humanize %}
 {% block content %}
 <br>
-<h2 style="text-align:center;">Neraca Saldo</h2>
+<h2 style="text-align:center;">Perubahan Ekuitas</h2>
 <br>
 <table style="width:70%;margin-left:auto;margin-right:auto;">
     <tr>
@@ -15,7 +15,7 @@
     <tr>
         {% if account_list.dp == 'dr' %}
         <td>{{account_list.c1}}-{{account_list.c2}}{{account_list.c3}}{{account_list.c4}}{{account_list.c5}}{{account_list.c6}}</td>
-        <td style="text-indent: 0px;">{{account_list.account|title}}</td>
+        <td style="text-indent: 20px;">{{account_list.account|title}}</td>
         <td align="right" style="width:12%">{{total_list.total|intcomma}}</td>
         <td></td>
         {% endif %}
@@ -23,7 +23,7 @@
     <tr>
         {% if account_list.dp == 'cr' %}
         <td>{{account_list.c1}}-{{account_list.c2}}{{account_list.c3}}{{account_list.c4}}{{account_list.c5}}{{account_list.c6}}</td>
-        <td style="text-indent: 20px;">{{account_list.account|title}}</td>
+        <td style="text-indent: 0px;">{{account_list.account|title}}</td>
         <td></td>
         <td align="right" style="width:12%">{{total_list.total|intcomma}}</td>
         {% endif %}
